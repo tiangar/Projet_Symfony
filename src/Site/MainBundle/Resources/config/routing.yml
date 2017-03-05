@@ -1,0 +1,7 @@
+site_main_homepage:
+    path:     /
+    defaults: { _controller: SiteMainBundle:Default:index }
+
+site_main_annoncepage:
+    path:     /a
+    defaults: { _controller: SiteMainBundle:Default:annonce }

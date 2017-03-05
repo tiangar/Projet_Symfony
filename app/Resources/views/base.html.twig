@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        {% block stylesheets %}
+
+            {% stylesheets filter='cssrewrite'
+            'templates/t1/css/main.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+            {% endstylesheets %}
+
+        {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="homepage">
+        <div id="page-wrapper">
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href={{ path('site_main_homepage') }}>Accueil</a></li>
+                    <li><a href={{ path('site_main_annoncepage') }}>Annonces</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- Banner -->
+            <div id="banner-wrapper">
+                <section id="banner">
+                    {% block banner %} {% endblock %}
+                </section>
+            </div>
+
+            <!-- Main -->
+            <div id="main-wrapper">
+                <div id="main" class="container">
+                    <div class="row 200%">
+                        <div class="12u">
+
+                            <!-- Features -->
+                            <section class="box features">
+                                <h2 class="major"><span>Dernières Annonces</span></h2>
+                                <div>
+                                    <div class="row">
+                                        <div class="3u 12u(mobile)">
+
+                                            <!-- Feature -->
+                                            <section class="box feature">
+
+                                                <a href="#" class="image featured"><img src={{ asset('templates/t1/images/pic01.jpg') }} alt="" /></a>
+                                                <h3><a href="#" class="icon fa-search"> Annonce 1</a></h3>
+                                                <p>
+                                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                                    lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                                </p>
+                                            </section>
+
+                                        </div>
+                                        <div class="3u 12u(mobile)">
+
+                                            <!-- Feature -->
+                                            <section class="box feature">
+                                                <h3><a href="#" class="icon fa-search">  Annnonce 2</a></h3>
+                                                <p>
+                                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                                    lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                                </p>
+                                            </section>
+
+                                        </div>
+                                        <div class="3u 12u(mobile)">
+
+                                            <!-- Feature -->
+                                            <section class="box feature">
+                                                <h3><a href="#" class="icon fa-search">  Annnonce 3</a></h3>
+                                                <p>
+                                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                                    lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                                </p>
+                                            </section>
+
+                                        </div>
+                                        <div class="3u 12u(mobile)">
+
+                                            <!-- Feature -->
+                                            <section class="box feature">
+                                                <h3><a href="#" class="icon fa-search">  Annonce 4</a></h3>
+                                                <p>
+                                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                                    lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                                </p>
+                                            </section>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="12u">
+                                            <ul class="actions">
+                                                <li><a href="#" class="button big">Do Something</a></li>
+                                                <li><a href="#" class="button alt big">Think About It</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% block body %}{% endblock %}
+
+            <!-- Footer -->
+            <footer id="footer" class="container">
+                <!-- Copyright -->
+                <div id="copyright">
+                    <ul class="menu">
+                        <li>Coco voit &copy; {{ 'now'|date('Y') }}</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <!-- Scripts -->
+
+        {% block javascripipt %}
+            {% javascripts
+            'templates/t1/js/jquery.min.js'
+            'templates/t1/js/jquery.dropotron.min.js'
+            'templates/t1/js/skel.min.js'
+            'templates/t1/js/skel-viewport.min.js'
+            'templates/t1/js/util.js'
+            'templates/t1/js/main.js' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+    </body>
+</html>
